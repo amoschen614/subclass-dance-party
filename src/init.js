@@ -32,10 +32,9 @@ $(document).ready(function() {
   });
   
   $('.lineUpButton').on('click', function(event) {
-    let left = 50;
+    let top = 50;
     for (let i = 0; i < window.dancers.length; i++) { 
-      window.dancers[i].lineUp(left);
-      left += 50;
+      window.dancers[i].lineUp(top + i * 50);
     }
   });
 });
