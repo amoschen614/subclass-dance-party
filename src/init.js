@@ -32,8 +32,7 @@ $(document).ready(function() {
   });
   
   $('.lineUpButton').on('click', function(event) {
-    let left = 100;
-    console.log(window.dancers);
+    let left = 50;
     for (let i = 0; i < window.dancers.length; i++) { 
       window.dancers[i].lineUp(left);
       left += 50;

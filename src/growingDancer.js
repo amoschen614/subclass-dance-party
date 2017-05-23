@@ -1,6 +1,8 @@
 var GrowingDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<img src="./assets/ditto.png" alt="ditto" id="twinkle" class="dancer">');
+  this.setPosition(top, left);
 };
 
 GrowingDancer.prototype = Object.create(Dancer.prototype);
@@ -14,21 +16,22 @@ GrowingDancer.prototype.step = function() {
   // this.oldStep.call(this);
 
   var largeSettings = {
-    height: 30,
-    width: 30
+    height: 80,
+    width: 80
   };
   var smallSettings = {
-    height: 10,
-    width: 10
+    height: 60,
+    width: 60
   };
   
+  let time = this.timeBetweenSteps < 100 ? this.timeBetweenSteps * 10 : this.timeBetweenSteps;
   let enlarge = function() {
-    this.$node.animate(largeSettings, this.timeBetweenSteps, 'swing', boundShrink);
+    this.$node.animate(largeSettings, time, 'swing', boundShrink);
   };
   let boundEnlarge = enlarge.bind(this);
 
   let shrink = function() {
-    this.$node.animate(smallSettings, this.timeBetweenSteps, 'swing', boundEnlarge);
+    this.$node.animate(smallSettings, time, 'swing', boundEnlarge);
   };
   let boundShrink = shrink.bind(this);
 

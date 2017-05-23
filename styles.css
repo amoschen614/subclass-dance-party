@@ -8,21 +8,32 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: white;
 }
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
 }
+
+.lineUpButton{
+  padding:5px 12px;
+  float:left;
+  font-weight: bold;
+}
+
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: #FF80AB;
 }
 .title{
-  background-color: #777;
+  color: white;
 }
 .dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+#twinkle{
+  border: none;
 }

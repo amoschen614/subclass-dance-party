@@ -30,7 +30,6 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 Dancer.prototype.lineUp = function(left) {
-  console.log('hi');
   var styleSettings = { 
     top: 400,
     left: left  
