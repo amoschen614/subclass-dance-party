@@ -15,7 +15,7 @@ body, a:link, a:visited, a:active{
   float:right;
 }
 
-.lineUpButton{
+.lineUpButton, .interactButton{
   padding:5px 12px;
   float:left;
   font-weight: bold;
@@ -35,6 +35,12 @@ body, a:link, a:visited, a:active{
 }
 
 #twinkle{
+  border: none;
+}
+
+#blinky{
+  height: 80px;
+  width: 80px;
   border: none;
 }
 

@@ -33,9 +33,34 @@ $(document).ready(function() {
   
   $('.lineUpButton').on('click', function(event) {
     let top = 50;
-    for (let i = 0; i < window.dancers.length; i++) { 
+    for (let i = 0; i < window.dancers.length; i++) {       
       window.dancers[i].lineUp(top + i * 50);
     }
+  });
+
+  $('.interactButton').on('click', function(event) {
+    for (let j = 0; j < 100; j++) {
+      for (let i = 0; i < window.dancers.length; i++) {
+        var $dancer = window.dancers[i].$node;
+        var $partner = window.dancers[(i + 1) % window.dancers.length].$node;
+
+        var $leftPartner = $dancer.offset().left < $partner.offset().left ? $dancer : $partner;
+        var $topPartner = $dancer.offset().top < $partner.offset().top ? $dancer : $partner; 
+        var $rightPartner = $dancer.offset().left > $partner.offset().left ? $dancer : $partner;
+        var $bottomPartner = $dancer.offset().top > $partner.offset().top ? $dancer : $partner; 
+
+
+        $leftPartner.animate({ left: '+=' + (($partner.offset().left + $dancer.offset().left) / 100)}, 10);
+        $rightPartner.animate({ left: '-=' + (($partner.offset().left + $dancer.offset().left) / 100)}, 10);
+        $topPartner.animate({ top: '+=' + (($partner.offset().top + $dancer.offset().top) / 100)}, 10);
+        $bottomPartner.animate({ top: '-=' + (($partner.offset().top + $dancer.offset().top) / 100)}, 10);
+      }
+    }
+  });
+
+  $('body').on('click', '#balloon', function(event) {
+    var $dancer = $(this);
+    $dancer.attr('src', './assets/dead.png');
   });
 });
 

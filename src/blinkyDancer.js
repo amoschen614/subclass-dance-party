@@ -1,7 +1,8 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
   Dancer.call(this, top, left, timeBetweenSteps);
-  
+  this.$node = $('<img src="./assets/rainbow.png" alt="rainbow" id="blinky" class="dancer">');
+  this.setPosition(top, left);
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);

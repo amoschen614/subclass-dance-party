@@ -32,7 +32,12 @@ Dancer.prototype.setPosition = function(top, left) {
 Dancer.prototype.lineUp = function(top) {
   var styleSettings = { 
     top: top,
-    left: 500 - this.$node.width()
+    left: 300 - this.$node.width()
   };
   this.$node.css(styleSettings);
+};
+
+Dancer.prototype.interact = function(dancer) {
+  alert('interact');
+  this.$node.animate({ top: '+=' + dancer.$node.offset().top - this.$node.offset().top});
 };
