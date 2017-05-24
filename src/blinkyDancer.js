@@ -1,7 +1,7 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<img src="./assets/rainbow.png" alt="rainbow" id="blinky" class="dancer">');
+  this.$node = $('<img src="./assets/winky.gif" alt="rainbow" id="blinky" class="dancer">');
   this.setPosition(top, left);
 };
 
@@ -14,5 +14,5 @@ BlinkyDancer.prototype.step = function() {
 // other effects you can use on a jQuery-wrapped html tag.
 //  super.step();
   this.oldStep.call(this);
-  this.$node.toggle();
+  // this.$node.toggle();
 };

@@ -39,7 +39,7 @@ $(document).ready(function() {
   });
 
   $('.interactButton').on('click', function(event) {
-    for (let j = 0; j < 100; j++) {
+    for (let j = 0; j < 10; j++) {
       for (let i = 0; i < window.dancers.length; i++) {
         var $dancer = window.dancers[i].$node;
         var $partner = window.dancers[(i + 1) % window.dancers.length].$node;
